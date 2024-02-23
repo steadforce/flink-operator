@@ -1,0 +1,11 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: {{ include "flink-operator.name" . }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "flink-operator.selectorLabels" . | nindent 6 }}
+  portLevelMtls:
+    9443:
+      mode: DISABLED

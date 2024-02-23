@@ -27,7 +27,7 @@ The following command renders the charts like argo-cd does to validate the conte
 ### local
 
 ```
- helm template --release-name flink -n flink --skip-tests \
+ helm template --release-name flink-operator -n flink-operator --skip-tests \
   -a networking.istio.io/v1beta1 \
   -a forecastle.stakater.com/v1alpha1 \
   -f values-local.yaml \
@@ -37,7 +37,7 @@ The following command renders the charts like argo-cd does to validate the conte
 ### dev
 
 ```
- helm template --release-name flink -n flink --skip-tests \
+ helm template --release-name flink-operator -n flink-operator --skip-tests \
   -a networking.istio.io/v1beta1 \
   -a forecastle.stakater.com/v1alpha1 \
   -f values-development.yaml \
@@ -47,7 +47,7 @@ The following command renders the charts like argo-cd does to validate the conte
 ### prod
 
 ```
- helm template --release-name flink -n flink --skip-tests \
+ helm template --release-name flink-operator -n flink-operator --skip-tests \
   -a networking.istio.io/v1beta1 \
   -a forecastle.stakater.com/v1alpha1 \
   -f values-production.yaml \
