@@ -4,3 +4,6 @@ global:
   istio:
     ingressGateway:
       namespace: istio-ingress
+
+flink-kubernetes-operator:
+  nameOverride: flink-operator

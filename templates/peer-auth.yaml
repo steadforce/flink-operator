@@ -2,11 +2,11 @@
 apiVersion: security.istio.io/v1beta1
 kind: PeerAuthentication
 metadata:
-  name: {{ include "flink-operator.name" . }}
+  name: {{ index .Values "flink-kubernetes-operator" "nameOverride" }}
 spec:
   selector:
     matchLabels:
-      {{- include "flink-operator.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/name: {{ index .Values "flink-kubernetes-operator" "nameOverride" }}
   portLevelMtls:
     9443:
       mode: DISABLE
