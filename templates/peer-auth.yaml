@@ -1,3 +1,4 @@
+{{- if .Capabilities.APIVersions.Has "security.istio.io/v1beta1" }}
 apiVersion: security.istio.io/v1beta1
 kind: PeerAuthentication
 metadata:
@@ -8,4 +9,5 @@ spec:
       {{- include "flink-operator.selectorLabels" . | nindent 6 }}
   portLevelMtls:
     9443:
-      mode: DISABLED
+      mode: DISABLE
+{{- end }}
