@@ -11,3 +11,11 @@ flink-kubernetes-operator:
     resources:
       limits:
         memory: 1024Mi
+      requests:
+        memory: 0Mi
+    webhook:
+      resources:
+        limits:
+          memory: 512Mi
+        requests:
+          memory: 0Mi
