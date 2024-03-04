@@ -7,3 +7,7 @@ global:
 
 flink-kubernetes-operator:
   nameOverride: flink-operator
+  operatorPod:
+    resources:
+      limits:
+        memory: 1024Mi
