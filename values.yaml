@@ -19,3 +19,15 @@ flink-kubernetes-operator:
       kubernetes.operator.reconcile.interval: 15 s
       kubernetes.operator.observer.progress-check.interval: 5 s
       s3.path.style.access: true
+  operatorPod:
+    resources:
+      limits:
+        memory: 1024Mi
+      requests:
+        memory: 0Mi
+    webhook:
+      resources:
+        limits:
+          memory: 512Mi
+        requests:
+          memory: 0Mi
