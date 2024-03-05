@@ -7,18 +7,6 @@ global:
 
 flink-kubernetes-operator:
   nameOverride: flink-operator
-  defaultConfiguration:
-    create: true
-    # Set append to false to replace configuration files
-    append: true
-    flink-conf.yaml: |+
-      # Flink Config Overrides
-      kubernetes.operator.metrics.reporter.slf4j.factory.class: org.apache.flink.metrics.slf4j.Slf4jReporterFactory
-      kubernetes.operator.metrics.reporter.slf4j.interval: 5 MINUTE
-
-      kubernetes.operator.reconcile.interval: 15 s
-      kubernetes.operator.observer.progress-check.interval: 5 s
-      s3.path.style.access: true
   operatorPod:
     resources:
       limits:
