@@ -1,0 +1,21 @@
+global:
+  acme:
+    domain: steadops.local.steadforce.com
+  istio:
+    ingressGateway:
+      namespace: istio-ingress
+
+flink-kubernetes-operator:
+  nameOverride: flink-operator
+  operatorPod:
+    resources:
+      limits:
+        memory: 1024Mi
+      requests:
+        memory: 0Mi
+    webhook:
+      resources:
+        limits:
+          memory: 512Mi
+        requests:
+          memory: 0Mi

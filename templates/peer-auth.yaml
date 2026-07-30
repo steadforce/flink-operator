@@ -1,0 +1,13 @@
+{{- if .Capabilities.APIVersions.Has "security.istio.io/v1beta1" }}
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: {{ index .Values "flink-kubernetes-operator" "nameOverride" }}
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ index .Values "flink-kubernetes-operator" "nameOverride" }}
+  portLevelMtls:
+    9443:
+      mode: DISABLE
+{{- end }}
